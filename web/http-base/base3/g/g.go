@@ -14,14 +14,13 @@ type Engine struct {
 	router map[string]HandlerFunc
 }
 
-// New is the constructor of g.Engine
+// New is the constructor of gee.Engine
 func New() *Engine {
 	return &Engine{router: make(map[string]HandlerFunc)}
 }
 
-func (engine *Engine) addRoute(method string,
-pattern string, handler HandlerFunc) {
-	key:=method + "=" + pattern
+func (engine *Engine) addRoute(method string, pattern string, handler HandlerFunc) {
+	key := method + "-" + pattern
 	log.Printf("Route %4s - %s", method, pattern)
 	engine.router[key] = handler
 }
@@ -31,7 +30,7 @@ func (engine *Engine) GET(pattern string, handler HandlerFunc) {
 	engine.addRoute("GET", pattern, handler)
 }
 
-// POST defines the method to add GET request
+// POST defines the method to add POST request
 func (engine *Engine) POST(pattern string, handler HandlerFunc) {
 	engine.addRoute("POST", pattern, handler)
 }
