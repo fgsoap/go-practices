@@ -20,8 +20,10 @@ func main() {
 	switch args[0] {
 	case "php":
 		_ = phpCmd.Parse(args[1:])
+		println("php")
 	case "go":
 		_ = goCmd.Parse(args[1:])
+		println("go")
 	default:
 		println("Great!")
 	}
