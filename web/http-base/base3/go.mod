@@ -1,4 +1,4 @@
-module go-practices/web/http-base/base3
+module github.com/fgsoap/go-practices/web/http-base/base3
 
 go 1.15
 
