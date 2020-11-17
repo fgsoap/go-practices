@@ -1,3 +1,3 @@
-module github.com/fgsoap/go-practices/tools/t2
+module github.com/fgsoap/go-practices/tools
 
 go 1.15
